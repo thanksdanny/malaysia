@@ -245,22 +245,26 @@ section:last-of-type{border-bottom:none;}
 .food-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:14px;}
 .food-card{
   border:1px solid var(--line);border-radius:12px;background:var(--ground-raised);
-  overflow:hidden;display:flex;gap:14px;
+  overflow:hidden;display:flex;flex-direction:column;
 }
-.food-card .thumb{width:132px;flex:none;aspect-ratio:4/3;object-fit:cover;display:block;background:var(--line);}
-.food-card.no-thumb{padding:16px 18px;}
-.food-card .stripe{width:4px;border-radius:4px;flex:none;margin:16px 0 16px 0;}
-.food-card.no-thumb .stripe{margin:0;}
+.food-card .thumb{width:100%;height:148px;object-fit:cover;display:block;background:var(--line);}
+.food-card .stripe{width:100%;height:4px;flex:none;margin:0;}
 .food-card.kl .stripe{background:var(--gold);}
 .food-card.mc .stripe{background:var(--teal);}
 .food-card.kk .stripe{background:var(--ocean);}
-.food-card .fc-body{flex:1;padding:14px 16px 14px 0;}
-.food-card.no-thumb .fc-body{padding:0;}
-.food-card.has-thumb .fc-body{padding-left:0;}
-.food-card .dish{font-family:'Fraunces',serif;font-weight:600;font-size:16px;}
-.food-card .where{font-size:12.5px;color:var(--ink-soft);margin:3px 0 6px;}
-.food-card .desc{font-size:13px;}
-.food-card .price{font-family:'Space Mono',monospace;font-size:12px;color:var(--ink-soft);margin-top:8px;}
+.food-card .fc-body{padding:14px 16px 16px;}
+.food-card .dish{font-family:'Fraunces',serif;font-weight:600;font-size:18px;}
+.food-card .why{font-size:13px;color:var(--ink-soft);margin:6px 0 12px;line-height:1.5;}
+.food-card .shops{display:flex;flex-direction:column;gap:8px;}
+.food-card .shop{
+  background:#fff;border:1px solid var(--line);border-radius:8px;padding:8px 10px;
+}
+.food-card .shop-name{font-weight:600;font-size:14px;line-height:1.35;}
+.food-card .shop-addr{
+  font-family:'Space Mono',monospace;font-size:11.5px;color:var(--ink-soft);
+  margin-top:3px;line-height:1.45;
+}
+.food-card .price{font-family:'Space Mono',monospace;font-size:12px;color:var(--ink-soft);margin-top:10px;}
 .photo-credit{font-size:11px;color:var(--ink-soft);margin-top:6px;}
 
 /* ---------- BUDGET ---------- */
@@ -784,33 +788,33 @@ footer{padding:36px 24px 60px;text-align:center;color:var(--ink-soft);font-size:
   <div class="city-block">
     <div class="city-title kl"><span class="dot"></span><h3>吉隆坡</h3></div>
     <div class="food-grid">
-      <div class="food-card kl has-thumb"><img class="thumb" src="img/durian.jpg" alt="档口筐里的榴莲"><div class="stripe"></div><div class="fc-body"><div class="dish">榴莲 Durian</div><div class="where">DurianMan 榴莲鲜生 · Durian Bros</div><div class="desc">专程吃去 DurianMan：7680, Jalan SS 2/24, SS2, 47300 Petaling Jaya，约 11:00–24:00，隔壁榴哥可以比。市区顺路去 Durian Bros：5, Jalan Bukit Bintang。9 月已过主产季，先确认是马来鲜果，切开称果肉再买。首选猫山王，太苦换 D24 或红虾。</div><div class="price">看当天牌子 · 一人 0.5–1 kg 果肉</div></div></div>
-      <div class="food-card kl has-thumb"><img class="thumb" src="img/nasi_lemak.jpg" alt="椰浆饭"><div class="stripe"></div><div class="fc-body"><div class="dish">椰浆饭 Nasi Lemak</div><div class="where">Nasi Lemak Wanjo · 甘榜巴鲁</div><div class="desc">甘榜巴鲁从 1960 年代吃到现在的老店。地址 8, Jalan Raja Muda Musa, Kampung Baru, 50300 Kuala Lumpur。LRT Kampung Baru 步行约 8 分钟。椰香饭配参巴，加炸鸡或仁当。</div><div class="price">人均 8-20 RM</div></div></div>
-      <div class="food-card kl has-thumb"><img class="thumb" src="img/bak_kut_teh.jpg" alt="肉骨茶"><div class="stripe"></div><div class="fc-body"><div class="dish">肉骨茶 Bak Kut Teh</div><div class="where">盛发肉骨茶 Seng Huat · 巴生</div><div class="desc">本地人说正宗在巴生，不在吉隆坡市区。地址 No. 9, Jalan Besar, Klang。瓦煲药材汤，配油条和白饭。Grab 大约 40 分钟，早市和傍晚两场。有猪肉。</div><div class="price">人均 20-35 RM</div></div></div>
-      <div class="food-card kl has-thumb"><img class="thumb" src="img/hokkien_mee.jpg" alt="福建面"><div class="stripe"></div><div class="fc-body"><div class="dish">福建面 Hokkien Mee</div><div class="where">亚华 Ahwa · 金莲记路边档</div><div class="desc">八打灵本地夜宵去亚华：66, Jalan 14/48, Seksyen 14, 46100 Petaling Jaya，炭火炒。人在茨厂街就去金莲记路边原档：42, Jalan Hang Lekir，傍晚到凌晨。粗黑酱油面配猪油渣。有猪肉。</div><div class="price">人均 10-18 RM</div></div></div>
-      <div class="food-card kl has-thumb"><img class="thumb" src="img/satay.jpg" alt="沙爹烤肉串"><div class="stripe"></div><div class="fc-body"><div class="dish">沙爹 Satay</div><div class="where">Sate Kajang Haji Samuri · 加影</div><div class="desc">沙爹的本地答案在加影。地址 Bangunan Dato' Nazir, Jalan Kelab, 43000 Kajang。MRT Stadium Kajang 出来过马路。鸡肉、牛肉、羊肉串配花生酱。Jalan Alor 只是顺路吃。</div><div class="price">约 1-1.5 RM/串</div></div></div>
-      <div class="food-card kl has-thumb"><img class="thumb" src="img/cendol.jpg" alt="煎蕊椰浆冰"><div class="stripe"></div><div class="fc-body"><div class="dish">煎蕊 Cendol</div><div class="where">Chinatown Cendol · 中央艺术坊</div><div class="desc">椰浆、绿色米苔目、椰糖。地址 SK-45, Jalan Hang Kasturi，中央艺术坊外面的 Kasturi Walk 上，逛完市场顺手一碗。</div><div class="price">6-10 RM</div></div></div>
-      <div class="food-card kl has-thumb"><img class="thumb" src="img/roti_canai.jpg" alt="印度煎饼配拉茶"><div class="stripe"></div><div class="fc-body"><div class="dish">印度煎饼 Roti Canai</div><div class="where">Nasi Kandar Pelita · 安邦路</div><div class="desc">本地人半夜还在坐的 mamak。地址 149, Jalan Ampang。煎饼配咖喱蘸，拉茶一起点，通宵开。</div><div class="price">2-5 RM</div></div></div>
+      <div class="food-card kl has-thumb"><div class="stripe"></div><img class="thumb" src="img/durian.jpg" alt="档口筐里的榴莲"><div class="fc-body"><div class="dish">榴莲 Durian</div><p class="why">9 月已过主产季。先确认是马来鲜果，切开称果肉再买。首选猫山王，太苦换 D24 或红虾。</p><div class="shops"><div class="shop"><div class="shop-name">DurianMan 榴莲鲜生</div><div class="shop-addr">7680, Jalan SS 2/24, SS2, Petaling Jaya · 约 11:00–24:00，隔壁榴哥可以比</div></div><div class="shop"><div class="shop-name">Durian Bros</div><div class="shop-addr">5, Jalan Bukit Bintang · Pavilion 旁边，市区顺路</div></div></div><div class="price">看当天牌子 · 一人 0.5–1 kg 果肉</div></div></div>
+      <div class="food-card kl has-thumb"><div class="stripe"></div><img class="thumb" src="img/nasi_lemak.jpg" alt="椰浆饭"><div class="fc-body"><div class="dish">椰浆饭 Nasi Lemak</div><p class="why">甘榜巴鲁从 1960 年代吃到现在的老店。椰香饭配参巴，加炸鸡或仁当。LRT Kampung Baru 步行约 8 分钟。</p><div class="shops"><div class="shop"><div class="shop-name">Nasi Lemak Wanjo</div><div class="shop-addr">8, Jalan Raja Muda Musa, Kampung Baru</div></div></div><div class="price">人均 8-20 RM</div></div></div>
+      <div class="food-card kl has-thumb"><div class="stripe"></div><img class="thumb" src="img/bak_kut_teh.jpg" alt="肉骨茶"><div class="fc-body"><div class="dish">肉骨茶 Bak Kut Teh</div><p class="why">本地人说正宗在巴生，不在市区。瓦煲药材汤，配油条和白饭。Grab 约 40 分钟，早市和傍晚两场。有猪肉。</p><div class="shops"><div class="shop"><div class="shop-name">盛发肉骨茶 Seng Huat</div><div class="shop-addr">No. 9, Jalan Besar, Klang</div></div></div><div class="price">人均 20-35 RM</div></div></div>
+      <div class="food-card kl has-thumb"><div class="stripe"></div><img class="thumb" src="img/hokkien_mee.jpg" alt="福建面"><div class="fc-body"><div class="dish">福建面 Hokkien Mee</div><p class="why">炭火炒的粗黑酱油面，配猪油渣。有猪肉。</p><div class="shops"><div class="shop"><div class="shop-name">亚华 Ahwa</div><div class="shop-addr">66, Jalan 14/48, Seksyen 14, Petaling Jaya · 本地夜宵</div></div><div class="shop"><div class="shop-name">金莲记路边原档</div><div class="shop-addr">42, Jalan Hang Lekir · 人在茨厂街，傍晚到凌晨</div></div></div><div class="price">人均 10-18 RM</div></div></div>
+      <div class="food-card kl has-thumb"><div class="stripe"></div><img class="thumb" src="img/satay.jpg" alt="沙爹烤肉串"><div class="fc-body"><div class="dish">沙爹 Satay</div><p class="why">加影才是沙爹的本地答案。鸡肉、牛肉、羊肉串配花生酱。Jalan Alor 只是顺路。</p><div class="shops"><div class="shop"><div class="shop-name">Sate Kajang Haji Samuri</div><div class="shop-addr">Bangunan Dato' Nazir, Jalan Kelab, 43000 Kajang · MRT Stadium Kajang 过马路</div></div></div><div class="price">约 1-1.5 RM/串</div></div></div>
+      <div class="food-card kl has-thumb"><div class="stripe"></div><img class="thumb" src="img/cendol.jpg" alt="煎蕊椰浆冰"><div class="fc-body"><div class="dish">煎蕊 Cendol</div><p class="why">椰浆、米苔目、椰糖。逛完中央艺术坊顺手一碗。</p><div class="shops"><div class="shop"><div class="shop-name">Chinatown Cendol</div><div class="shop-addr">SK-45, Jalan Hang Kasturi · Kasturi Walk</div></div></div><div class="price">6-10 RM</div></div></div>
+      <div class="food-card kl has-thumb"><div class="stripe"></div><img class="thumb" src="img/roti_canai.jpg" alt="印度煎饼配拉茶"><div class="fc-body"><div class="dish">印度煎饼 Roti Canai</div><p class="why">本地人半夜还在坐的 mamak。煎饼配咖喱，拉茶一起点，通宵开。</p><div class="shops"><div class="shop"><div class="shop-name">Nasi Kandar Pelita</div><div class="shop-addr">149, Jalan Ampang</div></div></div><div class="price">2-5 RM</div></div></div>
     </div>
   </div>
 
   <div class="city-block">
     <div class="city-title mc"><span class="dot"></span><h3>马六甲</h3></div>
     <div class="food-grid">
-      <div class="food-card mc has-thumb"><img class="thumb" src="img/nyonya_laksa.jpg" alt="娘惹叻沙"><div class="stripe"></div><div class="fc-body"><div class="dish">娘惹叻沙 / 亚参叻沙</div><div class="where">Jonker 88 · 鸡场街</div><div class="desc">鸡场街本地常点的叻沙和煎蕊。地址 88, Jalan Hang Jebat。Kopi Harian 也在这条街，想坐下来喝咖啡可以顺路再看。</div><div class="price">人均 12-25 RM</div></div></div>
-      <div class="food-card mc no-thumb"><div class="stripe"></div><div class="fc-body"><div class="dish">沙爹醋 Satay Celup</div><div class="where">Capitol Satay · 哥打沙班达</div><div class="desc">马六甲沙爹醋老店，已从武吉支那巷搬到 30, Jalan KPKS 3, Kompleks Perniagaan Kota Syahbandar, 75200 Melaka。傍晚才开。自己拿串，涮进花生汤。鸡场街打车几分钟。</div><div class="price">人均 25-40 RM</div></div></div>
-      <div class="food-card mc has-thumb"><img class="thumb" src="img/chicken_rice_ball.jpg" alt="马六甲鸡饭粒"><div class="stripe"></div><div class="fc-body"><div class="dish">鸡饭粒 Chicken Rice Ball</div><div class="where">和记 Hoe Kee · 鸡场街</div><div class="desc">1962 年起的鸡场街店。地址 4, 6 &amp; 8, Jalan Hang Jebat。米饭捏成小球，配白斩鸡或烧鸡。早上去，中午会排。</div><div class="price">人均 15-25 RM</div></div></div>
-      <div class="food-card mc has-thumb"><img class="thumb" src="img/nyonya_kuih.jpg" alt="娘惹糕点"><div class="stripe"></div><div class="fc-body"><div class="dish">手工蛋挞 / 娘惹糕点</div><div class="where">三叔公 San Shu Gong</div><div class="desc">鸡场街口的零食店。地址 33, Lorong Hang Jebat。现烤蛋挞、菠萝挞和娘惹糕，逛街顺手买。</div><div class="price">3-6 RM/个</div></div></div>
+      <div class="food-card mc has-thumb"><div class="stripe"></div><img class="thumb" src="img/nyonya_laksa.jpg" alt="娘惹叻沙"><div class="fc-body"><div class="dish">娘惹叻沙 / 亚参叻沙</div><p class="why">鸡场街本地常点的叻沙和煎蕊。Kopi Harian 也在这条街，想坐下来可以再看。</p><div class="shops"><div class="shop"><div class="shop-name">Jonker 88</div><div class="shop-addr">88, Jalan Hang Jebat</div></div></div><div class="price">人均 12-25 RM</div></div></div>
+      <div class="food-card mc no-thumb"><div class="stripe"></div><div class="fc-body"><div class="dish">沙爹醋 Satay Celup</div><p class="why">老店已从武吉支那巷搬过来。傍晚才开，自己拿串涮进花生汤。鸡场街打车几分钟。</p><div class="shops"><div class="shop"><div class="shop-name">Capitol Satay</div><div class="shop-addr">30, Jalan KPKS 3, Kompleks Perniagaan Kota Syahbandar</div></div></div><div class="price">人均 25-40 RM</div></div></div>
+      <div class="food-card mc has-thumb"><div class="stripe"></div><img class="thumb" src="img/chicken_rice_ball.jpg" alt="马六甲鸡饭粒"><div class="fc-body"><div class="dish">鸡饭粒 Chicken Rice Ball</div><p class="why">1962 年起的鸡场街店。米饭捏成小球，配白斩鸡或烧鸡。早上去，中午会排。</p><div class="shops"><div class="shop"><div class="shop-name">和记 Hoe Kee</div><div class="shop-addr">4, 6 &amp; 8, Jalan Hang Jebat</div></div></div><div class="price">人均 15-25 RM</div></div></div>
+      <div class="food-card mc has-thumb"><div class="stripe"></div><img class="thumb" src="img/nyonya_kuih.jpg" alt="娘惹糕点"><div class="fc-body"><div class="dish">手工蛋挞 / 娘惹糕点</div><p class="why">鸡场街口，现烤蛋挞、菠萝挞和娘惹糕，逛街顺手买。</p><div class="shops"><div class="shop"><div class="shop-name">三叔公 San Shu Gong</div><div class="shop-addr">33, Lorong Hang Jebat</div></div></div><div class="price">3-6 RM/个</div></div></div>
     </div>
   </div>
 
   <div class="city-block">
     <div class="city-title kk"><span class="dot"></span><h3>亚庇</h3></div>
     <div class="food-grid">
-      <div class="food-card kk has-thumb"><img class="thumb" src="img/hinava.jpg" alt="生腌鱼 Hinava"><div class="stripe"></div><div class="fc-body"><div class="dish">生腌鱼 Hinava</div><div class="where">D'Place Kinabalu · Plaza Shell</div><div class="desc">市区少有的卡达山菜。地址 Lot 2.01 &amp; 2.02, 2nd Floor, Plaza Shell, Jalan Tunku Abdul Rahman。鲜鱼用酸柑汁腌，点一份配叶包饭 linopot。</div><div class="price">人均 15-25 RM</div></div></div>
-      <div class="food-card kk has-thumb"><img class="thumb" src="img/grilled_seafood.jpg" alt="炭烤海鲜大排档"><div class="stripe"></div><div class="fc-body"><div class="dish">海鲜大排档</div><div class="where">Welcome Seafood · Asia City</div><div class="desc">本地人点海鲜常去这家。地址 Lot G-18, Kompleks Asia City, Jalan Asia City。先到鱼缸挑，再称重。石斑、老虎虾、螃蟹，两人分一顿。</div><div class="price">人均 60-120 RM</div></div></div>
-      <div class="food-card kk no-thumb"><div class="stripe"></div><div class="fc-body"><div class="dish">椰浆饭海鲜版</div><div class="where">怡丰茶室 Yee Fung · 加雅街</div><div class="desc">加雅街本地早餐地标。地址 127, Jalan Gaya。店里招牌是叻沙和牛杂；海鲜椰浆饭在这条街的早茶档，比吉隆坡版更咸鲜。早上人多，周末更早去。</div><div class="price">人均 10-18 RM</div></div></div>
-      <div class="food-card kk no-thumb"><div class="stripe"></div><div class="fc-body"><div class="dish">沙巴红茶</div><div class="where">Bataras Marketplace · 加雅街</div><div class="desc">沙巴茶标的市区购买点，在加雅街 Bataras Marketplace，可以买茶叶带走。周日早市就在同一条 Jalan Gaya，也有斗湖 Tenom 茶叶，大约早上到中午。</div><div class="price">茶叶另计 · 一杯 3-8 RM</div></div></div>
+      <div class="food-card kk has-thumb"><div class="stripe"></div><img class="thumb" src="img/hinava.jpg" alt="生腌鱼 Hinava"><div class="fc-body"><div class="dish">生腌鱼 Hinava</div><p class="why">市区少有的卡达山菜。鲜鱼用酸柑汁腌，配叶包饭 linopot。</p><div class="shops"><div class="shop"><div class="shop-name">D'Place Kinabalu</div><div class="shop-addr">Lot 2.01 &amp; 2.02, 2nd Floor, Plaza Shell, Jalan Tunku Abdul Rahman</div></div></div><div class="price">人均 15-25 RM</div></div></div>
+      <div class="food-card kk has-thumb"><div class="stripe"></div><img class="thumb" src="img/grilled_seafood.jpg" alt="炭烤海鲜大排档"><div class="fc-body"><div class="dish">海鲜大排档</div><p class="why">本地人点海鲜常去这家。先到鱼缸挑，再称重。石斑、老虎虾、螃蟹，两人分一顿。</p><div class="shops"><div class="shop"><div class="shop-name">Welcome Seafood</div><div class="shop-addr">Lot G-18, Kompleks Asia City, Jalan Asia City</div></div></div><div class="price">人均 60-120 RM</div></div></div>
+      <div class="food-card kk no-thumb"><div class="stripe"></div><div class="fc-body"><div class="dish">椰浆饭海鲜版</div><p class="why">加雅街早茶。店里招牌是叻沙和牛杂；海鲜椰浆饭在这条街的早茶档，比吉隆坡版更咸鲜。早上人多。</p><div class="shops"><div class="shop"><div class="shop-name">怡丰茶室 Yee Fung</div><div class="shop-addr">127, Jalan Gaya</div></div></div><div class="price">人均 10-18 RM</div></div></div>
+      <div class="food-card kk no-thumb"><div class="stripe"></div><div class="fc-body"><div class="dish">沙巴红茶</div><p class="why">沙巴茶标的市区购买点，可以买茶叶带走。周日早市同一条街也有斗湖茶叶，大约早上到中午。</p><div class="shops"><div class="shop"><div class="shop-name">Bataras Marketplace</div><div class="shop-addr">加雅街 Jalan Gaya</div></div></div><div class="price">茶叶另计 · 一杯 3-8 RM</div></div></div>
     </div>
   </div>
 </section>
