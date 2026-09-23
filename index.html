@@ -186,6 +186,10 @@ section:last-of-type{border-bottom:none;}
 .day-card.kk .city{color:var(--ocean);}
 .day-card .body{padding:20px 22px;}
 .day-card .headline{font-family:'Fraunces',serif;font-size:19px;font-weight:600;margin:0 0 14px;}
+.day-photos{display:grid;grid-template-columns:repeat(5,1fr);gap:8px;margin:0 0 16px;}
+.day-photos figure{margin:0;}
+.day-photos img{width:100%;height:92px;object-fit:cover;border-radius:8px;display:block;background:var(--line);}
+.day-photos figcaption{font-size:11px;color:var(--ink-soft);margin-top:4px;line-height:1.3;}
 .timeline{display:flex;flex-direction:column;gap:12px;}
 .tl-item{display:grid;grid-template-columns:64px 1fr;gap:14px;font-size:14px;}
 .tl-item .time{font-family:'Space Mono',monospace;font-size:12.5px;color:var(--ink-soft);padding-top:2px;}
@@ -334,6 +338,7 @@ footer{padding:36px 24px 60px;text-align:center;color:var(--ink-soft);font-size:
   .day-card{grid-template-columns:1fr;}
   .day-card .rail{flex-direction:row;flex-wrap:wrap;align-items:baseline;border-right:none;border-bottom:1px dashed var(--line);}
   .day-card .rail .city{margin-top:0;margin-left:auto;}
+  .day-photos{grid-template-columns:repeat(3,1fr);}
   .tips-grid{grid-template-columns:1fr;}
   .checklist-grid{grid-template-columns:1fr;}
   .stay-grid{grid-template-columns:1fr;}
@@ -389,8 +394,8 @@ footer{padding:36px 24px 60px;text-align:center;color:var(--ink-soft);font-size:
   </div>
   <div class="overview-grid">
     <div class="ov-card"><div class="day">DAY 1 · 9/23</div><div class="date">周三</div><span class="tag kl">吉隆坡</span><div class="txt">10:20 广州出发，抵达后入住 Hotel Royal Signature，双子塔夜景</div></div>
-    <div class="ov-card"><div class="day">DAY 2 · 9/24</div><div class="date">周四</div><span class="tag mc">马六甲</span><div class="txt">大巴一日往返古城，鸡场街、荷兰红屋、河畔游船</div></div>
-    <div class="ov-card"><div class="day">DAY 3 · 9/25</div><div class="date">周五</div><span class="tag kl">吉隆坡</span><div class="txt">黑风洞、独立广场、中央艺术坊，夜市收尾</div></div>
+    <div class="ov-card"><div class="day">DAY 2 · 9/24</div><div class="date">周四</div><span class="tag kl">吉隆坡</span><div class="txt">10:00 独立广场和清真寺，中午榴莲兄弟、印度帝国，下午黑风洞，晚上椰浆饭</div></div>
+    <div class="ov-card"><div class="day">DAY 3 · 9/25</div><div class="date">周五</div><span class="tag mc">马六甲</span><div class="txt">10:00 出发大巴一日往返，鸡饭粒、红屋、鸡场街、沙爹醋</div></div>
     <div class="ov-card"><div class="day">DAY 4 · 9/26</div><div class="date">周六</div><span class="tag kk">亚庇</span><div class="txt">飞抵亚庇，入住万豪酒店，丹绒亚路看首个日落</div></div>
     <div class="ov-card"><div class="day">DAY 5 · 9/27</div><div class="date">周日</div><span class="tag kk">亚庇</span><div class="txt">加雅街周日市集，酒店泳池躺平看日落</div></div>
     <div class="ov-card"><div class="day">DAY 6 · 9/28</div><div class="date">周一</div><span class="tag kk">亚庇</span><div class="txt">12:00 前退房，寄存行李逛到傍晚，20:00 飞回广州</div></div>
@@ -418,7 +423,7 @@ footer{padding:36px 24px 60px;text-align:center;color:var(--ink-soft);font-size:
   <div class="sec-head">
     <div class="eyebrow">三套侧重不同的走法</div>
     <h2>每日详细行程</h2>
-    <p>抵达日、马六甲一日游、亚庇的两晚酒店（26-28 已实际预订）是固定动作；中间一天弹性最大，下面给了三套方案，选一套顺着走，或互相搭配。</p>
+    <p>9/24 吉隆坡和 9/25 马六甲已经按实际走法定下来。亚庇两晚酒店（26-28）不变。方案 B、C 只改亚庇那两天的玩法。</p>
   </div>
 
   <div class="plan-switch">
@@ -444,37 +449,51 @@ footer{padding:36px 24px 60px;text-align:center;color:var(--ink-soft);font-size:
       </div>
     </div>
 
-    <div class="day-card mc">
-      <div class="rail"><div class="dn">DAY 2</div><div class="dd">9.24</div><div class="dw">周四</div><div class="city">马六甲</div></div>
+    <div class="day-card kl">
+      <div class="rail"><div class="dn">DAY 2</div><div class="dd">9.24</div><div class="dw">周四</div><div class="city">吉隆坡</div></div>
       <div class="body">
-        <div class="headline">大巴一日往返娘惹古城</div>
+        <div class="headline">今天：广场、清真寺，中午吃，下午黑风洞</div>
+        <div class="day-photos">
+          <figure><img src="img/merdeka.jpg" alt="独立广场和苏丹阿都沙末大厦"><figcaption>独立广场</figcaption></figure>
+          <figure><img src="img/national_mosque.jpg" alt="国家清真寺"><figcaption>国家清真寺</figcaption></figure>
+          <figure><img src="img/durian.jpg" alt="榴莲"><figcaption>榴莲兄弟</figcaption></figure>
+          <figure><img src="img/batu_caves.jpg" alt="黑风洞"><figcaption>黑风洞</figcaption></figure>
+          <figure><img src="img/nasi_lemak.jpg" alt="椰浆饭"><figcaption>晚上椰浆饭</figcaption></figure>
+        </div>
         <div class="timeline">
-          <div class="tl-item"><div class="time">07:30</div><div class="desc"><b>从 TBS 南湖镇综合车站坐大巴出发</b><span class="note">推荐 DELIMA、KKKL Express 这两家（小红书实测座位宽敞、准点发车），白天几乎每 30-60 分钟一班，车程约 2-2.5 小时，单程票价约 RM12-25，提前在 easybook.com 订好来回票；酒店到 TBS 打 Grab 约 20-30 分钟</span></div></div>
-          <div class="tl-item"><div class="time">10:00</div><div class="desc"><b>抵达 Melaka Sentral，Grab 转乘进城</b><span class="note">车站到古城核心区约 15-20 分钟车程，单程 Grab 约 RM15-20</span></div></div>
-          <div class="tl-item"><div class="time">10:30</div><div class="desc"><b>荷兰红屋广场 + 圣保罗山 + 圣地亚哥古城门 + 苏丹皇宫</b><span class="note">经典拍照动线：鸡场街 → 荷兰红屋 → 打卡钟楼 → 圣地亚哥古城门 → 苏丹皇宫，四个点步行都能串起来</span></div></div>
-          <div class="tl-item"><div class="time">12:30</div><div class="desc"><b>午饭：Kopi Harian（鸡场街）</b><span class="note">小红书高赞娘惹餐厅，盲点不踩雷，炒粿条、冰沙、椰浆饭、烤吐司都值得试</span></div></div>
-          <div class="tl-item"><div class="time">14:00</div><div class="desc"><b>鸡场街 Jonker Street 逛古董店，可加娘惹服体验</b><span class="note">想拍娘惹风街拍可以在这附近租可巴雅，约 1-1.5 小时能出片</span></div></div>
-          <div class="tl-item"><div class="time">15:30</div><div class="desc"><b>马六甲河游船</b><span class="note">40 分钟航程，两岸壁画和骑楼在傍晚光线下很出片</span></div></div>
-          <div class="tl-item"><div class="time">17:00</div><div class="desc"><b>沙爹醋 Satay Celup + 鸡饭粒当下午茶/早晚饭</b><span class="note">沙爹醋是马六甲独有的火锅式沙爹，鸡饭捏成球是当地特色</span></div></div>
-          <div class="tl-item"><div class="time">18:00</div><div class="desc"><b>沿马六甲海峡散步，找家海边小摊坐下看日落</b><span class="note">吃完饭沿河岸走到海峡边，比赶景点更放松的收尾方式</span></div></div>
-          <div class="tl-item"><div class="time">19:00</div><div class="desc"><b>Grab 回 Melaka Sentral，坐大巴返回吉隆坡</b><span class="note">尽量买 19:30-20:00 前后的班次，到 TBS 后 Grab 回酒店，避免太晚</span></div></div>
+          <div class="tl-item"><div class="time">10:00</div><div class="desc"><b>独立广场 + 苏丹阿都沙末大厦</b><span class="note">酒店 Grab 约 15 分钟。两处挨在一起，看外观，不用买票，大约 20 分钟</span></div></div>
+          <div class="tl-item"><div class="time">10:25</div><div class="desc"><b>国家清真寺</b><span class="note">从广场走约 10 分钟。周四上午能进，11:15 前出来。肩膀和膝盖遮住，门口可借长袍</span></div></div>
+          <div class="tl-item"><div class="time">12:00</div><div class="desc"><b>榴莲兄弟 Durian Bros</b><span class="note">5 Jalan Bukit Bintang，酒店走两分钟，12:00 才开门。两人只开一小份，猫山王太苦换 D24。赶不回就挪到印度菜后面</span></div></div>
+          <div class="tl-item"><div class="time">13:15</div><div class="desc"><b>印度帝国 Indian Empire</b><span class="note">18 Jalan Bukit Bintang，酒店隔壁。黄油鸡、biryani、烤饼就够</span></div></div>
+          <div class="tl-item"><div class="time">14:45</div><div class="desc"><b>黑风洞 Batu Caves</b><span class="note">Grab 约 40 分钟。带伞。272 级台阶，塑料袋拿好。洞里大约 1.5 小时</span></div></div>
+          <div class="tl-item"><div class="time">17:30</div><div class="desc"><b>直接去甘榜巴鲁，不回酒店</b></div></div>
+          <div class="tl-item"><div class="time">18:15</div><div class="desc"><b>Nasi Lemak Wanjo</b><span class="note">8 Jalan Raja Muda Musa。一份椰浆饭加炸鸡或仁当</span></div></div>
+          <div class="tl-item"><div class="time">19:30</div><div class="desc"><b>回酒店</b><span class="note">想散步就去楼下 Jalan Alor 走一圈，不用再点菜。22:00 左右回去，明天要去马六甲</span></div></div>
         </div>
       </div>
     </div>
 
-    <div class="day-card kl">
-      <div class="rail"><div class="dn">DAY 3</div><div class="dd">9.25</div><div class="dw">周五</div><div class="city">吉隆坡</div></div>
+    <div class="day-card mc">
+      <div class="rail"><div class="dn">DAY 3</div><div class="dd">9.25</div><div class="dw">周五</div><div class="city">马六甲</div></div>
       <div class="body">
-        <div class="headline">经典半日打卡，剩下时间留给逛吃</div>
-        <div class="timeline">
-          <div class="tl-item"><div class="time">08:30</div><div class="desc"><b>黑风洞 Batu Caves</b><span class="note">趁早去躲晒躲人，272 级彩虹阶梯 + 巨大金身壁像，Grab 单程约 40 分钟</span></div></div>
-          <div class="tl-item"><div class="time">11:00</div><div class="desc"><b>独立广场 + 苏丹阿都沙末大厦 + 国家清真寺</b><span class="note">殖民建筑群集中在一起，国家清真寺对非穆斯林开放特定时段，记得带长袍遮挡（现场有借）</span></div></div>
-          <div class="tl-item"><div class="time">13:00</div><div class="desc"><b>午饭：中央艺术坊附近老字号肉骨茶</b><span class="note">推荐巴生（Klang）系肉骨茶，若不想跑远，市区分店也够地道</span></div></div>
-          <div class="tl-item"><div class="time">下午</div><div class="desc"><b>中央艺术坊 Central Market 逛手作、买伴手礼</b><span class="note">蜡染、锡器、咖啡都在这一栋楼里，冷气开得很足，正好躲午后阵雨</span></div></div>
-          <div class="tl-item"><div class="time">傍晚</div><div class="desc"><b>回酒店休息，武吉免登按摩/下午茶</b><span class="note">马来西亚 9 月午后常有雷阵雨，这段空档正好用来避雨</span></div></div>
-          <div class="tl-item"><div class="time">19:30</div><div class="desc"><b>Jalan Alor 夜市吃到扶墙</b><span class="note">沙爹、烤翅、榴莲摊都在这条街，认准排队长的摊位</span></div></div>
+        <div class="headline">明天：10 点出门，大巴一天来回</div>
+        <div class="day-photos">
+          <figure><img src="img/stadthuys.jpg" alt="荷兰红屋"><figcaption>荷兰红屋</figcaption></figure>
+          <figure><img src="img/a_famosa.jpg" alt="圣地亚哥古城门"><figcaption>古城门</figcaption></figure>
+          <figure><img src="img/chicken_rice_ball.jpg" alt="鸡饭粒"><figcaption>和记鸡饭粒</figcaption></figure>
+          <figure><img src="img/jonker_street.jpg" alt="鸡场街"><figcaption>鸡场街</figcaption></figure>
+          <figure><img src="img/nyonya_kuih.jpg" alt="娘惹糕"><figcaption>三叔公</figcaption></figure>
         </div>
-        <div class="swap"><b>体力有余可加：</b>茨厂街唐人街夜逛、或提前去 KL Tower 观景台看不同角度的城市天际线。</div>
+        <div class="timeline">
+          <div class="tl-item"><div class="time">10:00</div><div class="desc"><b>Grab 去 TBS，坐 11:00 前后的大巴</b><span class="note">酒店到车站约 20–30 分钟。DELIMA 或 KKKL Express，easybook 订来回。回程买 19:00–19:30。单程约 2–2.5 小时，每人 RM12–25</span></div></div>
+          <div class="tl-item"><div class="time">13:30</div><div class="desc"><b>Melaka Sentral，Grab 进城</b><span class="note">15–20 分钟，约 RM15–20</span></div></div>
+          <div class="tl-item"><div class="time">14:00</div><div class="desc"><b>和记 Hoe Kee 鸡饭粒</b><span class="note">4、6、8 号 Jalan Hang Jebat。配白斩鸡或烧鸡。下午 4 点多关门，到了先吃</span></div></div>
+          <div class="tl-item"><div class="time">14:40</div><div class="desc"><b>荷兰红屋、基督堂、圣地亚哥城门</b><span class="note">走路能串完。圣保罗山要爬，热就不上</span></div></div>
+          <div class="tl-item"><div class="time">15:30</div><div class="desc"><b>鸡场街</b><span class="note">三叔公 San Shu Gong，33 Lorong Hang Jebat，买蛋挞和娘惹糕。Jonker 88，88 Jalan Hang Jebat，叻沙或煎蕊</span></div></div>
+          <div class="tl-item"><div class="time">16:30</div><div class="desc"><b>马六甲河游船，可跳过</b><span class="note">约 40 分钟。时间紧就留给晚饭</span></div></div>
+          <div class="tl-item"><div class="time">17:15</div><div class="desc"><b>Capitol Satay 沙爹醋</b><span class="note">30 Jalan KPKS 3，Kompleks Kota Syahbandar。傍晚才开，鸡场街打车几分钟。别吃太慢</span></div></div>
+          <div class="tl-item"><div class="time">18:40</div><div class="desc"><b>Grab 回 Melaka Sentral，赶上 19:00–19:30 的大巴</b><span class="note">约 21:30 到 TBS，再 Grab 回武吉免登。周五晚上可能堵，按 23:00 前到酒店留余量。后天 7:00 要去机场</span></div></div>
+        </div>
       </div>
     </div>
 
@@ -542,29 +561,14 @@ footer{padding:36px 24px 60px;text-align:center;color:var(--ink-soft);font-size:
       </div>
     </div>
 
-    <div class="day-card mc">
-      <div class="rail"><div class="dn">DAY 2</div><div class="dd">9.24</div><div class="dw">周四</div><div class="city">马六甲</div></div>
-      <div class="body"><div class="headline">同方案 A：大巴一日往返马六甲</div>
-        <div class="timeline">
-          <div class="tl-item"><div class="time">07:30-19:30</div><div class="desc"><b>TBS 坐大巴往返（约 2-2.5 小时/程，RM12-25/人）</b><span class="note">荷兰红屋、圣保罗山、鸡场街、河畔游船、娘惹菜</span></div></div>
-        </div>
-      </div>
+    <div class="day-card kl">
+      <div class="rail"><div class="dn">DAY 2</div><div class="dd">9.24</div><div class="dw">周四</div><div class="city">吉隆坡</div></div>
+      <div class="body"><div class="headline">同方案 A：广场、清真寺、榴莲、印度帝国、黑风洞、晚上椰浆饭</div></div>
     </div>
 
-    <div class="day-card kl">
-      <div class="rail"><div class="dn">DAY 3</div><div class="dd">9.25</div><div class="dw">周五</div><div class="city">吉隆坡</div></div>
-      <div class="body">
-        <div class="headline">一天塞满吉隆坡最经典的六个点</div>
-        <div class="timeline">
-          <div class="tl-item"><div class="time">07:30</div><div class="desc"><b>黑风洞</b><span class="note">早去避开旅行团高峰</span></div></div>
-          <div class="tl-item"><div class="time">10:00</div><div class="desc"><b>独立广场、苏丹阿都沙末大厦、国家清真寺</b></div></div>
-          <div class="tl-item"><div class="time">12:00</div><div class="desc"><b>中央艺术坊午饭 + 快速扫货</b></div></div>
-          <div class="tl-item"><div class="time">14:00</div><div class="desc"><b>茨厂街唐人街 + 关帝庙</b></div></div>
-          <div class="tl-item"><div class="time">16:00</div><div class="desc"><b>KL Tower 观景台看落日</b><span class="note">比双子塔观景台更少人排队</span></div></div>
-          <div class="tl-item"><div class="time">19:00</div><div class="desc"><b>武吉免登商圈晚饭 + 夜生活</b></div></div>
-        </div>
-        <div class="swap"><b>体力允许可选：</b>把当天延伸为云顶高原一日游（山顶乐园+缆车+云海），需早上 7 点前出发，晚上才能回到市区。</div>
-      </div>
+    <div class="day-card mc">
+      <div class="rail"><div class="dn">DAY 3</div><div class="dd">9.25</div><div class="dw">周五</div><div class="city">马六甲</div></div>
+      <div class="body"><div class="headline">同方案 A：10:00 出发，大巴一日往返</div></div>
     </div>
 
     <div class="day-card kk">
@@ -614,27 +618,14 @@ footer{padding:36px 24px 60px;text-align:center;color:var(--ink-soft);font-size:
       <div class="body"><div class="headline">同方案 A：落地入住 Hotel Royal Signature + 双子塔夜景</div></div>
     </div>
 
-    <div class="day-card mc">
-      <div class="rail"><div class="dn">DAY 2</div><div class="dd">9.24</div><div class="dw">周四</div><div class="city">马六甲</div></div>
-      <div class="body"><div class="headline">同方案 A，重点全放在吃上（大巴往返）</div>
-        <div class="timeline">
-          <div class="tl-item"><div class="time">全天</div><div class="desc"><b>TBS 坐大巴往返，景点走马观花</b><span class="note">娘惹叻沙、沙爹醋、鸡饭粒、鸡场街手工蛋挞逐一吃遍</span></div></div>
-        </div>
-      </div>
+    <div class="day-card kl">
+      <div class="rail"><div class="dn">DAY 2</div><div class="dd">9.24</div><div class="dw">周四</div><div class="city">吉隆坡</div></div>
+      <div class="body"><div class="headline">同方案 A：广场、清真寺、榴莲、印度帝国、黑风洞、晚上椰浆饭</div></div>
     </div>
 
-    <div class="day-card kl">
-      <div class="rail"><div class="dn">DAY 3</div><div class="dd">9.25</div><div class="dw">周五</div><div class="city">吉隆坡</div></div>
-      <div class="body">
-        <div class="headline">白天景点从简，晚上两个夜市连轴逛</div>
-        <div class="timeline">
-          <div class="tl-item"><div class="time">09:00</div><div class="desc"><b>黑风洞（睡到自然醒也来得及）</b></div></div>
-          <div class="tl-item"><div class="time">12:00</div><div class="desc"><b>中央艺术坊午饭，慢慢逛，不赶路</b></div></div>
-          <div class="tl-item"><div class="time">15:00</div><div class="desc"><b>咖啡馆午后小憩</b><span class="note">武吉免登一带精品咖啡馆密度很高，正好避开阵雨</span></div></div>
-          <div class="tl-item"><div class="time">18:00</div><div class="desc"><b>茨厂街唐人街夜市</b><span class="note">先在这里吃点心、水果</span></div></div>
-          <div class="tl-item"><div class="time">20:00</div><div class="desc"><b>Jalan Alor 夜市吃到扶墙</b><span class="note">两个夜市步行/打车都很近，一晚连吃两场</span></div></div>
-        </div>
-      </div>
+    <div class="day-card mc">
+      <div class="rail"><div class="dn">DAY 3</div><div class="dd">9.25</div><div class="dw">周五</div><div class="city">马六甲</div></div>
+      <div class="body"><div class="headline">同方案 A：10:00 出发，大巴一日往返</div></div>
     </div>
 
     <div class="day-card kk">
@@ -692,7 +683,7 @@ footer{padding:36px 24px 60px;text-align:center;color:var(--ink-soft);font-size:
       <div class="t-dot">🚌</div>
       <div class="t-body">
         <div class="t-route">酒店 → TBS → Melaka Sentral → 马六甲古城</div>
-        <div class="t-detail">9/24 往返：Grab 到 TBS 南湖镇车站，坐 DELIMA / KKKL Express 大巴到 Melaka Sentral，再 Grab 进城；傍晚原路返回</div>
+        <div class="t-detail">9/25 往返：10:00 从酒店 Grab 到 TBS，坐 DELIMA / KKKL Express，回程买 19:00–19:30 的班次；Melaka Sentral 再 Grab 进城</div>
         <div class="t-meta"><span>大巴约 2-2.5 小时/程</span><span>RM12-25/人/程</span><span>提前 easybook.com 订票</span></div>
       </div>
     </div>
