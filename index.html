@@ -200,6 +200,16 @@ section:last-of-type{border-bottom:none;}
   border:1px dashed var(--line);font-size:13px;color:var(--ink-soft);
 }
 .swap b{color:var(--ink);}
+.day-photos.six{grid-template-columns:repeat(6,1fr);}
+.route-switch{display:flex;gap:8px;flex-wrap:wrap;margin:2px 0 14px;}
+.route-btn{
+  padding:8px 12px;border-radius:10px;border:1px solid var(--line);
+  background:var(--ground);cursor:pointer;font-family:'Work Sans',sans-serif;
+  font-weight:600;font-size:13px;color:var(--ink-soft);text-align:left;
+}
+.route-btn.active{border-color:var(--teal);background:var(--teal-soft);color:var(--ink);}
+.route-panel{display:none;}
+.route-panel.active{display:block;}
 
 /* ---------- TRANSPORT CHAIN ---------- */
 .transport-chain{margin-top:6px;}
@@ -338,7 +348,7 @@ footer{padding:36px 24px 60px;text-align:center;color:var(--ink-soft);font-size:
   .day-card{grid-template-columns:1fr;}
   .day-card .rail{flex-direction:row;flex-wrap:wrap;align-items:baseline;border-right:none;border-bottom:1px dashed var(--line);}
   .day-card .rail .city{margin-top:0;margin-left:auto;}
-  .day-photos{grid-template-columns:repeat(3,1fr);}
+  .day-photos,.day-photos.six{grid-template-columns:repeat(3,1fr);}
   .tips-grid{grid-template-columns:1fr;}
   .checklist-grid{grid-template-columns:1fr;}
   .stay-grid{grid-template-columns:1fr;}
@@ -395,7 +405,7 @@ footer{padding:36px 24px 60px;text-align:center;color:var(--ink-soft);font-size:
   <div class="overview-grid">
     <div class="ov-card"><div class="day">DAY 1 · 9/23</div><div class="date">周三</div><span class="tag kl">吉隆坡</span><div class="txt">10:20 广州出发，抵达后入住 Hotel Royal Signature，双子塔夜景</div></div>
     <div class="ov-card"><div class="day">DAY 2 · 9/24</div><div class="date">周四</div><span class="tag kl">吉隆坡</span><div class="txt">10:00 独立广场和清真寺，中午榴莲兄弟、印度帝国，下午黑风洞，晚上椰浆饭</div></div>
-    <div class="ov-card"><div class="day">DAY 3 · 9/25</div><div class="date">周五</div><span class="tag mc">马六甲</span><div class="txt">10:00 出发大巴一日往返，鸡饭粒、红屋、鸡场街、沙爹醋</div></div>
+    <div class="ov-card"><div class="day">DAY 3 · 9/25</div><div class="date">周五</div><span class="tag mc">马六甲</span><div class="txt">9:30 大巴，中午 Kopi Harian。鸡场街、红屋台阶、圣方济教堂那座桥、城门。早收工就 4、5 点回来</div></div>
     <div class="ov-card"><div class="day">DAY 4 · 9/26</div><div class="date">周六</div><span class="tag kk">亚庇</span><div class="txt">飞抵亚庇，入住万豪酒店，丹绒亚路看首个日落</div></div>
     <div class="ov-card"><div class="day">DAY 5 · 9/27</div><div class="date">周日</div><span class="tag kk">亚庇</span><div class="txt">加雅街周日市集，酒店泳池躺平看日落</div></div>
     <div class="ov-card"><div class="day">DAY 6 · 9/28</div><div class="date">周一</div><span class="tag kk">亚庇</span><div class="txt">12:00 前退房，寄存行李逛到傍晚，20:00 飞回广州</div></div>
@@ -468,7 +478,7 @@ footer{padding:36px 24px 60px;text-align:center;color:var(--ink-soft);font-size:
           <div class="tl-item"><div class="time">14:45</div><div class="desc"><b>黑风洞 Batu Caves</b><span class="note">Grab 约 40 分钟。带伞。272 级台阶，塑料袋拿好。洞里大约 1.5 小时</span></div></div>
           <div class="tl-item"><div class="time">17:30</div><div class="desc"><b>直接去甘榜巴鲁，不回酒店</b></div></div>
           <div class="tl-item"><div class="time">18:15</div><div class="desc"><b>Nasi Lemak Wanjo</b><span class="note">8 Jalan Raja Muda Musa。一份椰浆饭加炸鸡或仁当</span></div></div>
-          <div class="tl-item"><div class="time">19:30</div><div class="desc"><b>回酒店</b><span class="note">想散步就去楼下 Jalan Alor 走一圈，不用再点菜。22:00 左右回去，明天要去马六甲</span></div></div>
+          <div class="tl-item"><div class="time">19:30</div><div class="desc"><b>回酒店</b><span class="note">想散步就去楼下 Jalan Alor 走一圈，不用再点菜。早点睡。明天 8:25 出门，赶 9:30 的马六甲大巴</span></div></div>
         </div>
       </div>
     </div>
@@ -476,24 +486,42 @@ footer{padding:36px 24px 60px;text-align:center;color:var(--ink-soft);font-size:
     <div class="day-card mc">
       <div class="rail"><div class="dn">DAY 3</div><div class="dd">9.25</div><div class="dw">周五</div><div class="city">马六甲</div></div>
       <div class="body">
-        <div class="headline">明天：10 点出门，大巴一天来回</div>
-        <div class="day-photos">
+        <div class="headline">明天：9 点半发车，中午 Kopi Harian，古城走一圈</div>
+        <div class="day-photos six">
+          <figure><img src="img/kopi_harian.jpg" alt="抹茶麻薯吐司和一碗娘惹叻沙"><figcaption>中午这顿 · 参考图</figcaption></figure>
+          <figure><img src="img/jonker_street.jpg" alt="鸡场街"><figcaption>鸡场街</figcaption></figure>
           <figure><img src="img/stadthuys.jpg" alt="荷兰红屋"><figcaption>荷兰红屋</figcaption></figure>
           <figure><img src="img/a_famosa.jpg" alt="圣地亚哥古城门"><figcaption>古城门</figcaption></figure>
-          <figure><img src="img/chicken_rice_ball.jpg" alt="鸡饭粒"><figcaption>和记鸡饭粒</figcaption></figure>
-          <figure><img src="img/jonker_street.jpg" alt="鸡场街"><figcaption>鸡场街</figcaption></figure>
-          <figure><img src="img/nyonya_kuih.jpg" alt="娘惹糕"><figcaption>三叔公</figcaption></figure>
+          <figure><img src="img/malacca_river.jpg" alt="马六甲河"><figcaption>河上的桥</figcaption></figure>
+          <figure><img src="img/satay.jpg" alt="沙爹"><figcaption>老王 · 路线一</figcaption></figure>
         </div>
         <div class="timeline">
-          <div class="tl-item"><div class="time">10:00</div><div class="desc"><b>Grab 去 TBS，坐 11:00 前后的大巴</b><span class="note">酒店到车站约 20–30 分钟。DELIMA 或 KKKL Express，easybook 订来回。回程买 19:00–19:30。单程约 2–2.5 小时，每人 RM12–25</span></div></div>
-          <div class="tl-item"><div class="time">13:30</div><div class="desc"><b>Melaka Sentral，Grab 进城</b><span class="note">15–20 分钟，约 RM15–20</span></div></div>
-          <div class="tl-item"><div class="time">14:00</div><div class="desc"><b>和记 Hoe Kee 鸡饭粒</b><span class="note">4、6、8 号 Jalan Hang Jebat。配白斩鸡或烧鸡。下午 4 点多关门，到了先吃</span></div></div>
-          <div class="tl-item"><div class="time">14:40</div><div class="desc"><b>荷兰红屋、基督堂、圣地亚哥城门</b><span class="note">走路能串完。圣保罗山要爬，热就不上</span></div></div>
-          <div class="tl-item"><div class="time">15:30</div><div class="desc"><b>鸡场街</b><span class="note">三叔公 San Shu Gong，33 Lorong Hang Jebat，买蛋挞和娘惹糕。Jonker 88，88 Jalan Hang Jebat，叻沙或煎蕊</span></div></div>
-          <div class="tl-item"><div class="time">16:30</div><div class="desc"><b>马六甲河游船，可跳过</b><span class="note">约 40 分钟。时间紧就留给晚饭</span></div></div>
-          <div class="tl-item"><div class="time">17:15</div><div class="desc"><b>Capitol Satay 沙爹醋</b><span class="note">30 Jalan KPKS 3，Kompleks Kota Syahbandar。傍晚才开，鸡场街打车几分钟。别吃太慢</span></div></div>
-          <div class="tl-item"><div class="time">18:40</div><div class="desc"><b>Grab 回 Melaka Sentral，赶上 19:00–19:30 的大巴</b><span class="note">约 21:30 到 TBS，再 Grab 回武吉免登。周五晚上可能堵，按 23:00 前到酒店留余量。后天 7:00 要去机场</span></div></div>
+          <div class="tl-item"><div class="time">08:25</div><div class="desc"><b>酒店出门，Grab 去 TBS</b><span class="note">武吉免登到车站平时 25–40 分钟。9 点多到就行，留一刻钟找站台。去程今晚在 easybook 对一下 9:30 还有没有座，KKKL、Delima、Melor 都行，单程大约 2 小时 15 分，每人 RM12–25</span></div></div>
+          <div class="tl-item"><div class="time">09:30</div><div class="desc"><b>TBS 发车，到 Melaka Sentral</b><span class="note">大约 11:45–12:15 到。出站叫 Grab 去鸡场街，15–20 分钟，约 RM15–20</span></div></div>
+          <div class="tl-item"><div class="time">12:20</div><div class="desc"><b>Kopi Harian，今天的中饭</b><span class="note">61, Jalan Hang Jebat，就在鸡场街上。点抹茶麻薯吐司和娘惹叻沙。吐司要酥的那面，叻沙碗大、椰香重，两人可以共一碗再各加一份吐司，不够再加。大约 9:00–17:30 营业，中午会排队，队走得快</span></div></div>
+          <div class="tl-item"><div class="time">13:20</div><div class="desc"><b>鸡场街往北，经过牌坊</b><span class="note">从 Kopi Harian 门口沿 Jalan Hang Jebat 往红屋走，牌坊就在这条街上。看见郑和画像看一眼就走，文化馆不进。别再坐下吃饭</span></div></div>
+          <div class="tl-item"><div class="time">13:50</div><div class="desc"><b>荷兰红屋，站到右侧台阶上拍</b><span class="note">广场正面那张从右侧台阶拍更完整。基督堂就在旁边，外观就够，不用进博物馆</span></div></div>
+          <div class="tl-item"><div class="time">14:15</div><div class="desc"><b>圣方济教堂，站到 Chan Koon Cheng Bridge 上拍</b><span class="note">红屋再走几分钟，教堂对着河。谷歌导航搜 Chan Koon Cheng Bridge，桥上能同时看到教堂和河面。游船今天不上</span></div></div>
+          <div class="tl-item"><div class="time">14:45</div><div class="desc"><b>圣地亚哥城门，热就不上山</b><span class="note">城门在红屋旁边。圣保罗教堂在山顶，台阶不长，想看全景再爬。赶 4、5 点的车就到这里收工。苏丹皇宫在北边，只有还想多拍才去</span></div></div>
         </div>
+        <div class="route-switch">
+          <button class="route-btn active" type="button" data-route="eat">路线一 · 吃完老王再走</button>
+          <button class="route-btn" type="button" data-route="back">路线二 · 4、5 点坐车，回吉隆坡再吃</button>
+        </div>
+        <div class="route-panel active" data-route="eat">
+          <div class="timeline">
+            <div class="tl-item"><div class="time">15:30</div><div class="desc"><b>Grab 去老王海南沙爹</b><span class="note">313, Jalan Gajah Berang。不在 Kopi Harian 隔壁，离鸡场街开车大约 8–10 分钟。周五 12:30–19:30 开，周二休息。猪肉、鸡肉配菠萝花生酱，有猪肉</span></div></div>
+            <div class="tl-item"><div class="time">16:50</div><div class="desc"><b>Grab 回 Melaka Sentral</b><span class="note">15–20 分钟。下午回吉隆坡的车大约每 30–60 分钟一班，KKKL、Delima、Melor 都有，末班到晚上。买 17:30–18:30 有座的那班。票可以早上在 easybook 看下午的，也可以到车站柜台买当天的</span></div></div>
+            <div class="tl-item"><div class="time">20:00</div><div class="desc"><b>大约这时候到 TBS，Grab 回武吉免登</b><span class="note">这顿已经在马六甲吃过。周五晚上车站出来可能堵，按 21:30 前到酒店。明天 7:00 要去机场</span></div></div>
+          </div>
+        </div>
+        <div class="route-panel" data-route="back">
+          <div class="timeline">
+            <div class="tl-item"><div class="time">15:40</div><div class="desc"><b>从城门或那座桥直接 Grab 回 Melaka Sentral</b><span class="note">15–20 分钟。目标 16:30–17:30 的车。玩到 4 点出头就走得及；再晚一班也还有，不用卡死某一个钟点</span></div></div>
+            <div class="tl-item"><div class="time">19:00</div><div class="desc"><b>大约这时候到 TBS，回酒店附近随便吃</b><span class="note">这顿你自己定。武吉免登楼下 Jalan Alor、Pavilion 都能解决，不用再排店。明天 7:00 去机场，别吃太晚</span></div></div>
+          </div>
+        </div>
+        <div class="swap"><b>下午就这一条：鸡场街、红屋台阶、圣方济教堂那座桥、城门。</b>海峡清真寺、旋转塔、颠倒屋今天不去。两条线的差别只在收工：还想吃沙爹就去老王再坐车；早点玩完就 4、5 点走，晚饭回吉隆坡再说。</div>
       </div>
     </div>
 
@@ -568,7 +596,7 @@ footer{padding:36px 24px 60px;text-align:center;color:var(--ink-soft);font-size:
 
     <div class="day-card mc">
       <div class="rail"><div class="dn">DAY 3</div><div class="dd">9.25</div><div class="dw">周五</div><div class="city">马六甲</div></div>
-      <div class="body"><div class="headline">同方案 A：10:00 出发，大巴一日往返</div></div>
+      <div class="body"><div class="headline">同方案 A：9:30 发车，Kopi Harian，古城走一圈</div></div>
     </div>
 
     <div class="day-card kk">
@@ -625,7 +653,7 @@ footer{padding:36px 24px 60px;text-align:center;color:var(--ink-soft);font-size:
 
     <div class="day-card mc">
       <div class="rail"><div class="dn">DAY 3</div><div class="dd">9.25</div><div class="dw">周五</div><div class="city">马六甲</div></div>
-      <div class="body"><div class="headline">同方案 A：10:00 出发，大巴一日往返</div></div>
+      <div class="body"><div class="headline">同方案 A：9:30 发车，Kopi Harian，古城走一圈</div></div>
     </div>
 
     <div class="day-card kk">
@@ -682,9 +710,9 @@ footer{padding:36px 24px 60px;text-align:center;color:var(--ink-soft);font-size:
     <div class="t-leg mc">
       <div class="t-dot">🚌</div>
       <div class="t-body">
-        <div class="t-route">酒店 → TBS → Melaka Sentral → 马六甲古城</div>
-        <div class="t-detail">9/25 往返：10:00 从酒店 Grab 到 TBS，坐 DELIMA / KKKL Express，回程买 19:00–19:30 的班次；Melaka Sentral 再 Grab 进城</div>
-        <div class="t-meta"><span>大巴约 2-2.5 小时/程</span><span>RM12-25/人/程</span><span>提前 easybook.com 订票</span></div>
+        <div class="t-route">酒店 → TBS → Melaka Sentral → 鸡场街</div>
+        <div class="t-detail">9/25：8:25 从酒店 Grab 到 TBS，坐 9:30 的车。回程两条线，吃完老王坐 17:30–18:30，或 15:40 从古城出发赶 16:30–17:30。KKKL、Delima、Melor 下午都有班</div>
+        <div class="t-meta"><span>单程约 2 小时 15 分</span><span>RM12-25/人/程</span><span>去程先在 easybook 订 9:30</span></div>
       </div>
     </div>
     <div class="t-leg kk">
@@ -746,11 +774,11 @@ footer{padding:36px 24px 60px;text-align:center;color:var(--ink-soft);font-size:
   <div class="city-block">
     <div class="city-title mc"><span class="dot"></span><h3>马六甲</h3></div>
     <div class="poi-grid">
-      <div class="poi"><img class="thumb" src="img/stadthuys.jpg" alt="荷兰红屋广场"><div class="poi-body"><div class="name">荷兰红屋广场</div><div class="desc">马六甲最经典的合影点，荷兰殖民时期建筑。</div><div class="meta">建议 30min</div></div></div>
-      <div class="poi"><img class="thumb" src="img/a_famosa.jpg" alt="圣地亚哥古城门"><div class="poi-body"><div class="name">圣保罗山</div><div class="desc">登顶俯瞰整座古城和海峡，山脚有圣地亚哥古城门遗址。</div><div class="meta">建议 40min</div></div></div>
-      <div class="poi"><img class="thumb" src="img/jonker_street.jpg" alt="鸡场街骑楼建筑"><div class="poi-body"><div class="name">鸡场街 Jonker Street</div><div class="desc">古董店、娘惹瓷砖建筑，周五六日夜晚变身夜市。</div><div class="meta">建议 1.5H</div></div></div>
-      <div class="poi"><img class="thumb" src="img/malacca_river.jpg" alt="马六甲河沿岸"><div class="poi-body"><div class="name">马六甲河游船</div><div class="desc">40 分钟航程，两岸壁画在傍晚光线下最出片。</div><div class="meta">建议 1H · 傍晚场次最佳</div></div></div>
-      <div class="poi"><img class="thumb" src="img/sultan_palace.jpg" alt="马六甲苏丹皇宫复原建筑"><div class="poi-body"><div class="name">苏丹皇宫 Istana Kesultanan Melaka</div><div class="desc">按古籍复原的马六甲王朝木造宫殿，内部是马来传统文化博物馆，适合拍照。</div><div class="meta">建议 40min</div></div></div>
+      <div class="poi"><img class="thumb" src="img/stadthuys.jpg" alt="荷兰红屋广场"><div class="poi-body"><div class="name">荷兰红屋广场</div><div class="desc">正面那张从广场右侧台阶上拍。基督堂就在旁边，看外观。</div><div class="meta">建议 20min</div></div></div>
+      <div class="poi"><img class="thumb" src="img/a_famosa.jpg" alt="圣地亚哥古城门"><div class="poi-body"><div class="name">圣地亚哥城门 / 圣保罗山</div><div class="desc">城门在红屋旁边。圣保罗教堂在山顶，热就只拍城门。</div><div class="meta">建议 30min</div></div></div>
+      <div class="poi"><img class="thumb" src="img/jonker_street.jpg" alt="鸡场街骑楼建筑"><div class="poi-body"><div class="name">鸡场街 Jonker Street</div><div class="desc">从 Kopi Harian 往北走到红屋，经过牌坊。郑和画像看一眼，文化馆不进。</div><div class="meta">建议 25min</div></div></div>
+      <div class="poi"><img class="thumb" src="img/malacca_river.jpg" alt="马六甲河沿岸"><div class="poi-body"><div class="name">Chan Koon Cheng Bridge</div><div class="desc">站在这座桥上看圣方济教堂和河面。游船今天不排。</div><div class="meta">建议 15min</div></div></div>
+      <div class="poi"><img class="thumb" src="img/sultan_palace.jpg" alt="马六甲苏丹皇宫复原建筑"><div class="poi-body"><div class="name">苏丹皇宫 Istana Kesultanan Melaka</div><div class="desc">在城门北边。赶 4、5 点的车就跳过。</div><div class="meta">可选 · 约 30min</div></div></div>
       <div class="poi"><div class="poi-body"><div class="name">娘惹服体验</div><div class="desc">鸡场街一带有多家娘惹服租赁馆，换上可巴雅在古城街拍，小红书上 NY Kebaya Nyonya 口碑不错。</div><div class="meta">建议 1-1.5H · 可选</div></div></div>
     </div>
   </div>
@@ -792,9 +820,10 @@ footer{padding:36px 24px 60px;text-align:center;color:var(--ink-soft);font-size:
   <div class="city-block">
     <div class="city-title mc"><span class="dot"></span><h3>马六甲</h3></div>
     <div class="food-grid">
-      <div class="food-card mc has-thumb"><div class="stripe"></div><img class="thumb" src="img/nyonya_laksa.jpg" alt="娘惹叻沙"><div class="fc-body"><div class="dish">娘惹叻沙 / 亚参叻沙</div><p class="why">鸡场街本地常点的叻沙和煎蕊。Kopi Harian 也在这条街，想坐下来可以再看。</p><div class="shops"><div class="shop"><div class="shop-name">Jonker 88</div><div class="shop-addr">88, Jalan Hang Jebat</div></div></div><div class="price">人均 12-25 RM</div></div></div>
-      <div class="food-card mc no-thumb"><div class="stripe"></div><div class="fc-body"><div class="dish">沙爹醋 Satay Celup</div><p class="why">老店已从武吉支那巷搬过来。傍晚才开，自己拿串涮进花生汤。鸡场街打车几分钟。</p><div class="shops"><div class="shop"><div class="shop-name">Capitol Satay</div><div class="shop-addr">30, Jalan KPKS 3, Kompleks Perniagaan Kota Syahbandar</div></div></div><div class="price">人均 25-40 RM</div></div></div>
-      <div class="food-card mc has-thumb"><div class="stripe"></div><img class="thumb" src="img/chicken_rice_ball.jpg" alt="马六甲鸡饭粒"><div class="fc-body"><div class="dish">鸡饭粒 Chicken Rice Ball</div><p class="why">1962 年起的鸡场街店。米饭捏成小球，配白斩鸡或烧鸡。早上去，中午会排。</p><div class="shops"><div class="shop"><div class="shop-name">和记 Hoe Kee</div><div class="shop-addr">4, 6 &amp; 8, Jalan Hang Jebat</div></div></div><div class="price">人均 15-25 RM</div></div></div>
+      <div class="food-card mc has-thumb"><div class="stripe"></div><img class="thumb" src="img/kopi_harian.jpg" alt="抹茶麻薯吐司和娘惹叻沙"><div class="fc-body"><div class="dish">抹茶麻薯吐司 + 娘惹叻沙</div><p class="why">明天中午就吃这家。吐司外皮酥，叻沙碗大、椰香重，两人可以共一碗。店在鸡场街中段，下车直接过来。</p><div class="shops"><div class="shop"><div class="shop-name">Kopi Harian</div><div class="shop-addr">61, Jalan Hang Jebat · 约 9:00–17:30</div></div></div><div class="price">两人大约 40-70 RM</div></div></div>
+      <div class="food-card mc has-thumb"><div class="stripe"></div><img class="thumb" src="img/satay.jpg" alt="沙爹"><div class="fc-body"><div class="dish">老王海南沙爹</div><p class="why">路线一的第二顿。猪肉、鸡肉，配菠萝花生酱，有猪肉。不在 Kopi Harian 隔壁，鸡场街打车大约 8–10 分钟。周五开到 19:30，周二休息。</p><div class="shops"><div class="shop"><div class="shop-name">Beh Leh Hainam Satay</div><div class="shop-addr">313, Jalan Gajah Berang · 12:30–19:30</div></div></div><div class="price">大约 RM1 出头一串</div></div></div>
+      <div class="food-card mc has-thumb"><div class="stripe"></div><img class="thumb" src="img/nyonya_laksa.jpg" alt="娘惹叻沙"><div class="fc-body"><div class="dish">娘惹叻沙 / 亚参叻沙</div><p class="why">今天不排。Kopi Harian 已经有叻沙。这家是鸡场街另一家常点的，想换口味再来。</p><div class="shops"><div class="shop"><div class="shop-name">Jonker 88</div><div class="shop-addr">88, Jalan Hang Jebat</div></div></div><div class="price">人均 12-25 RM</div></div></div>
+      <div class="food-card mc has-thumb"><div class="stripe"></div><img class="thumb" src="img/chicken_rice_ball.jpg" alt="马六甲鸡饭粒"><div class="fc-body"><div class="dish">鸡饭粒 Chicken Rice Ball</div><p class="why">今天不排，中午已经留给 Kopi Harian。1962 年起的鸡场街店，米饭捏成小球，配白斩鸡或烧鸡。想加再说。</p><div class="shops"><div class="shop"><div class="shop-name">和记 Hoe Kee</div><div class="shop-addr">4, 6 &amp; 8, Jalan Hang Jebat</div></div></div><div class="price">人均 15-25 RM</div></div></div>
       <div class="food-card mc has-thumb"><div class="stripe"></div><img class="thumb" src="img/nyonya_kuih.jpg" alt="娘惹糕点"><div class="fc-body"><div class="dish">手工蛋挞 / 娘惹糕点</div><p class="why">鸡场街口，现烤蛋挞、菠萝挞和娘惹糕，逛街顺手买。</p><div class="shops"><div class="shop"><div class="shop-name">三叔公 San Shu Gong</div><div class="shop-addr">33, Lorong Hang Jebat</div></div></div><div class="price">3-6 RM/个</div></div></div>
     </div>
   </div>
@@ -966,9 +995,21 @@ footer{padding:36px 24px 60px;text-align:center;color:var(--ink-soft);font-size:
 
 </div>
 
-<footer>吉隆坡 · 马六甲 · 亚庇 · 2026 秋 &nbsp;·&nbsp; 行程与预算均为估算，出行前请以官方信息与实时价格为准<br>景点/美食参考图片来自 Wikimedia Commons，仅供行程直观参考，非实拍店铺</footer>
+<footer>吉隆坡 · 马六甲 · 亚庇 · 2026 秋 &nbsp;·&nbsp; 行程与预算均为估算，出行前请以官方信息与实时价格为准<br>景点图来自 Wikimedia Commons。Kopi Harian 那张是参考图，不是店里实拍</footer>
 
 <script>
+document.querySelectorAll('.route-switch').forEach(sw=>{
+  const root = sw.parentElement;
+  sw.querySelectorAll('.route-btn').forEach(btn=>{
+    btn.addEventListener('click',()=>{
+      sw.querySelectorAll('.route-btn').forEach(b=>b.classList.remove('active'));
+      root.querySelectorAll('.route-panel').forEach(p=>p.classList.remove('active'));
+      btn.classList.add('active');
+      root.querySelector('.route-panel[data-route="'+btn.dataset.route+'"]').classList.add('active');
+    });
+  });
+});
+
 document.querySelectorAll('.plan-btn').forEach(btn=>{
   btn.addEventListener('click',()=>{
     document.querySelectorAll('.plan-btn').forEach(b=>b.classList.remove('active'));
